@@ -853,6 +853,7 @@ class DocCLI(CLI, RoleMixin):
             if text:
                 DocCLI.pager(''.join(text))
 
+                
         return 0
 
     @staticmethod
@@ -861,7 +862,7 @@ class DocCLI(CLI, RoleMixin):
         paths = loader._get_paths_with_context()
         plugins = {}
         for path_context in paths:
-            plugins.update(list_plugins(plugin_type, searc_path=context.CLIARGS['module_path']))
+            plugins.update(list_plugins(plugin_type, search_paths=context.CLIARGS['module_path']))
         return sorted(plugins.keys())
 
     @staticmethod
